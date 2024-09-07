@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_game/widgets/token_box.dart';
 
@@ -32,7 +34,6 @@ class _GameHomeState extends State<GameHome> {
   }
 
   void startgame() {
-    print("game started");
     if (playerNo == 1) {
       handleTokenO();
       playerNo = 0;
@@ -54,15 +55,14 @@ class _GameHomeState extends State<GameHome> {
 
   @override
   Widget build(BuildContext context) {
-    print("paseed tocken : $printtoken");
     return Container(
         color: Colors.amber,
         child: MaterialApp(
           home: Scaffold(
-            backgroundColor: Colors.blue,
+            backgroundColor: Color.fromARGB(255, 3, 130, 234),
             appBar: AppBar(
               toolbarHeight: 60,
-              backgroundColor: Colors.blue,
+              backgroundColor: Color.fromARGB(255, 3, 130, 234),
               title: SizedBox(
                 width: 500,
                 child: Row(
@@ -153,19 +153,38 @@ class _GameHomeState extends State<GameHome> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // TokenBox(),
-                    // TokenBox(),
-                    // TokenBox(),
-
                     TokenBox(
+                      boxValue: 0,
                       playerNo: playerNo,
                       playerTurn: playerTurn,
                     ),
                     TokenBox(
+                      boxValue: 1,
                       playerNo: playerNo,
                       playerTurn: playerTurn,
                     ),
                     TokenBox(
+                      boxValue: 2,
+                      playerNo: playerNo,
+                      playerTurn: playerTurn,
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TokenBox(
+                      boxValue: 3,
+                      playerNo: playerNo,
+                      playerTurn: playerTurn,
+                    ),
+                    TokenBox(
+                      boxValue: 4,
+                      playerNo: playerNo,
+                      playerTurn: playerTurn,
+                    ),
+                    TokenBox(
+                      boxValue: 5,
                       playerNo: playerNo,
                       playerTurn: playerTurn,
                     ),
@@ -175,34 +194,17 @@ class _GameHomeState extends State<GameHome> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TokenBox(
+                      boxValue: 6,
                       playerNo: playerNo,
                       playerTurn: playerTurn,
                     ),
                     TokenBox(
+                      boxValue: 7,
                       playerNo: playerNo,
                       playerTurn: playerTurn,
                     ),
                     TokenBox(
-                      playerNo: playerNo,
-                      playerTurn: playerTurn,
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // TokenBox(),
-                    // TokenBox(),
-                    // TokenBox(),
-                    TokenBox(
-                      playerNo: playerNo,
-                      playerTurn: playerTurn,
-                    ),
-                    TokenBox(
-                      playerNo: playerNo,
-                      playerTurn: playerTurn,
-                    ),
-                    TokenBox(
+                      boxValue: 8,
                       playerNo: playerNo,
                       playerTurn: playerTurn,
                     ),
